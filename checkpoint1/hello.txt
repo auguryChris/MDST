@@ -2,4 +2,3 @@ Name: Chris Westendorf
 Masters of Data Science 21
 Undergraduate in Architecture
 Decade of Advertising, Branding and Interaction Design Experience in NYC agencies
-Testing edits.
