@@ -6,4 +6,5 @@ tutorial1
 tutorial2
 mdst.code-workspace
 data
-
+archive
+.DS_Store
