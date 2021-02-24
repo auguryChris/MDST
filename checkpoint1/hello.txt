@@ -2,3 +2,10 @@ Name: Chris Westendorf
 Masters of Data Science 21
 Undergraduate in Architecture
 Decade of Advertising, Branding and Interaction Design Experience in NYC agencies
+
+Published Data Driven Articles:
+https://medium.com/@westendorf.chris/covid-19-nyc-foot-traffic-impact-2ff6345d0a16
+
+Certificates: 
+IBM Data Science Professional Certification https://www.youracclaim.com/badges/cb27e439-d8eb-4909-83fd-b74dc075b840
+Datacamp Data Science with Python Track : https://github.com/auguryChris/MDST/blob/main/checkpoint1/data_camp_certificate.pdf
