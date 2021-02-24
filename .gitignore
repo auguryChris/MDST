@@ -2,7 +2,7 @@
 .ipynb_checkpoints
 __pycache__
 env
-data
 tutorial1
 tutorial2
 mdst.code-workspace
+.DS_Store

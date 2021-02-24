@@ -19,25 +19,40 @@ This should load the data, perform preprocessing, and save the output to the dat
 """
 
 def remove_percents(df, col):
+    df[col].replace('%','',regex=True,inplace=True)
     return df
 
 def fill_zero_iron(df):
+    df.fillna(0,inplace=True)
     return df
     
 def fix_caffeine(df):
+    df_1 = df[df['Caffeine (mg)'] != 'Varies']
+    df_2 = df_1[df_1['Caffeine (mg)'] != 'varies']
+    df_3 = df_2[df_2['Caffeine (mg)'] != 'nan']
+    median_replace= df_3['Caffeine (mg)'].median()
+    df['Caffeine (mg)'].replace(['Varies','vaires','nan'],median_replace,inplace=True)
+    
     return df
 
 def standardize_names(df):
+    df.columns= ['beverage category', 'beverage', 'beverage prep', 'calories',
+       'total fat', 'trans fat', 'saturated fat', 'sodium',
+       'total carbohydrates', 'cholesterol', 'dietary fiber',
+       'sugars', 'protein', 'vitamin a', 'vitamin c',
+       'calcium', 'iron', 'caffeine']
     return df
 
 def fix_strings(df, col):
+    df[col].replace('[^A-Za-z0-9 ]+','',regex=True,inplace=True)
     return df
 
 
 def main():
     
     # first, read in the raw data
-    df = pd.read_csv('../data/starbucks.csv')
+    import pandas as pd
+    df = pd.read_csv('/Users/Chris/Documents/00.Data_science/00.MADS/git_MDST/data/starbucks.csv')
     
     # the columns below represent percent daily value and are stored as strings with a percent sign, e.g. '0%'
     # complete the remove_percents function to remove the percent symbol and convert the columns to a numeric type
@@ -66,7 +81,7 @@ def main():
     
     # now that the data is all clean, save your output to the `data` folder as 'starbucks_clean.csv'
     # you will use this file in checkpoint 2
-    
+    df.to_csv('/Users/Chris/Documents/00.Data_science/00.MADS/git_MDST/data/starbucks_clean.csv')
     
 
 if __name__ == "__main__":
